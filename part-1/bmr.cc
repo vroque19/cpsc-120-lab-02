@@ -1,4 +1,11 @@
-
+// Vanessa Roque
+// CPSC 120-19
+// 2021-09-17
+// vroque19@csu.fullerton.edu
+// @vroque19
+//
+// Lab 00-02
+//
 /// Program to calculate the BMR of a person using the Mifflin St Jeor equation.
 
 #include <cmath>
@@ -13,10 +20,10 @@ int main(int argc, char const *argv[]) {
   // which is assigned the value 2.54
   // TODO: Define a constant of type float with the name kPoundsToKilograms
   // which is assigned the value 0.4535
-
+const float kInchesToCentimeters = 2.54;
   cout << "This program estimates the basal metabolic rate\n";
   cout << "using the Mifflin St Jeor Equation.\n";
-
+const float kPoundsToKilograms = 0.4535;
   cout << "Please enter the subject's sex.\n";
   cout << "Please enter 'm' for male or 'f' for female: ";
   string sex;
@@ -27,18 +34,20 @@ int main(int argc, char const *argv[]) {
   is_male_flag = (sex == "m");
 
   // TODO: Using cout prompt the computer user for the subject's age in years.
-
+cout << "Please enter the subject's age in years (no decimal point please): ";
   // TODO: Declare a variable of type int with the name age_years and assign it
   // the value of 0.
-
+int age_years = 0;
   // TODO: Read from the terminal using cin to set a value to age_years
-
+cin >> age_years;
   // TODO: Confirm the value that was entered by printing it back to the
   // terminal using cout.
-
+cout << "You entered '" << age_years << "'\n\n";
   // TODO: Using cout, prompt the computer user to select metric units or US
   // customary weights and measures.
-
+cout << "Would you like to enter the subject's height and weight \n";
+cout << "in metric units (kg & cm) or U.S. customary units (in & lbs)?\n";
+ cout << "Enter 'm' for metric and 'u' for U.S.:\n\n";
   // TODO: Declare a variable named measurement_system of type string. You do
   // not need to initialize strings because they are set to an empty string by
   // default. An empty string is "".
