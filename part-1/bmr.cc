@@ -51,24 +51,24 @@ cout << "in metric units (kg & cm) or U.S. customary units (in & lbs)?\n";
   // TODO: Declare a variable named measurement_system of type string. You do
   // not need to initialize strings because they are set to an empty string by
   // default. An empty string is "".
-
+string measurement_system;
   // TODO: Using cin, read the measurement system (either an "m" or "u") into
   // the variable measurement_system.
-
+cin >> measurement_system;
   // TODO: Confirm the value that was entered by printing it back to the
   // terminal using cout.
-
+cout << "You entered '" << measurement_system << "'.\n";
   // TODO: Similar to the is_male_flag, declare a variable of type bool named
   // is_metric_flag and assign the value false
-
+bool is_metric_flag = false;
   // TODO: Assign the value of (measurement_system == "m") to is_metric_flag
   // similar to how is_male_flag is assigned (sex == "m").
-
+is_metric_flag = (measurement_system == "m");
   // TODO: Declare a variable of type float named height_cm and assign the value
   // NAN to it. Remember integers are assigned 0 and floats are assigned NAN.
   // NAN stands for 'not a number' which represents things like 7 / 0 or the
   // square root of -15.
-
+float height_cm = NAN;
   // TODO: Using is_metric_flag, write an if/else statement. If is_metric_flag
   // is true then prompt the computer user to enter the subject's height in
   // centimeters. Else, prompt the computer user to input the subject's height
@@ -78,7 +78,11 @@ cout << "in metric units (kg & cm) or U.S. customary units (in & lbs)?\n";
   // the computer user may enter inches but everything inside the program is in
   // centimeters. Convert between inches and centimeters by multiplying the
   // inches by kInchesToCentimeters.
-
+if (is_metric_flag == true) {
+  cout << "Enter the subject's height in cm.";
+} else {
+  cout << "Enter the subject's height in inches.";
+}
   // TODO: Declare a variable of type float named mass_kg and assign the value
   // NAN to it. Remember integers are assigned 0 and floats are assigned NAN.
   // NAN stands for 'not a number' which represents things like 7 / 0 or the
