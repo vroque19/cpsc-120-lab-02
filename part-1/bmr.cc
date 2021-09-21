@@ -6,7 +6,7 @@
 //
 // Lab 00-02
 //
-/// Program to calculate the BMR of a person using the Mifflin St Jeor equation.
+// Program to calculate the BMR of a person using the Mifflin St Jeor equation.
 
 #include <cmath>
 #include <iostream>
@@ -47,11 +47,11 @@ cout << "You entered '" << age_years << "'\n\n";
   // customary weights and measures.
 cout << "Would you like to enter the subject's height and weight \n";
 cout << "in metric units (kg & cm) or U.S. customary units (in & lbs)?\n";
- cout << "Enter 'm' for metric and 'u' for U.S.:\n\n";
+cout << "Enter 'm' for metric and 'u' for U.S.:";
   // TODO: Declare a variable named measurement_system of type string. You do
   // not need to initialize strings because they are set to an empty string by
   // default. An empty string is "".
-string measurement_system;
+string measurement_system = "";
   // TODO: Using cin, read the measurement system (either an "m" or "u") into
   // the variable measurement_system.
 cin >> measurement_system;
@@ -81,13 +81,13 @@ float height_cm = NAN;
 if (is_metric_flag == true) {
   cout << "Enter the subject's height in cm.";
 } else {
-  cout << "Enter the subject's height in inches.";
+  cout << "Enter the subject's height in inches.\n";
 }
   // TODO: Declare a variable of type float named mass_kg and assign the value
   // NAN to it. Remember integers are assigned 0 and floats are assigned NAN.
   // NAN stands for 'not a number' which represents things like 7 / 0 or the
   // square root of -15.
-
+float mass_kg = NAN;
   // TODO: Using is_metric_flag, write an if/else statement. If is_metric_flag
   // is true then prompt the computer user to enter the subject's weight in
   // kilograms (kg). Else, prompt the computer user to input the subject's
@@ -97,46 +97,67 @@ if (is_metric_flag == true) {
   // Remember, the computer user may enter pounds but everything inside the
   // program is in kilograms. Convert between pounds and kilograms by
   // multiplying the pounds by kPoundsToKilograms.
-
+if (is_metric_flag == true) {
+  cout << "Please enter the subject's weight in kilograms.\n";
+} else {
+  cout << "Please enter the subject's weight in pounds";
+}
+float mass_pounds = NAN;
+cout << "mass_pounds";
+mass_kg = (mass_pounds * kPoundsToKilograms);
   // TODO: Declare a variable of type float named magic_s and assign the value
   // NAN to it. Remember integers are assigned 0 and floats are assigned NAN.
   // NAN stands for 'not a number' which represents things like 7 / 0 or the
   // square root of -15.
-
+float magic_s = NAN;
   // TODO: Using is_male_flag, write an if/else statement. If is_male_flag is
   // true then assign magic_s to 5.0. Else, assign magic_s to -161.0.
-
+if (is_male_flag == true) {
+  magic_s = 5.0;
+} else {
+  magic_s = -161.0;
+}
   // TODO: Declare a variable of type float named bmr and assign the value NAN
   // to it. Remember integers are assigned 0 and floats are assigned NAN. NAN
   // stands for 'not a number' which represents things like 7 / 0 or the square
   // root of -15.
-
+float bmr = NAN;
   // TODO: Calculate the BMR using the formula given in the README.md and assign
   // the result to the variable bmr. Remember that age_years is an int so it
   // must be converted to a float using the float constructor.
-
+bmr = ((10 * mass_kg)+(6.25 * height_cm)-(5 * age_years));
   // TODO: Declare a variable named sex_string of type string. You do not need
   // to initialize strings because they are set to an empty string by default.
   // An empty string is "".
-
+string sex_string = "";
   // TODO: Using is_male_flag, write an if/else statement. If is_male_flag is
   // true then assign sex_string "male". Else, assign sex_string "female".
-
+if (is_male_flag == true) {
+  sex_string = "male";
+} else {
+  sex_string = "female";
+}
   // TODO: Declare a variable named pronoun of type string. You do not need to
   // initialize strings because they are set to an empty string by default. An
   // empty string is "".
-
+string pronoun = "";
   // TODO: Using is_male_flag, write an if/else statement. If is_male_flag is
   // true then assign pronoun "He". Else, assign pronoun "She".
+if (is_male_flag == true) {
+  pronoun = "He";
+} else {
+    pronoun = "She";
+  }
 
-  // TODO: Summarize the data that was given to the program. Remember that we
+  // Summarize the data that was given to the program. Remember that we
   // need to have the sex_string, age_years, height_cm, and mass_kg variables.
   // For example, "Given the details of the male subject of 30 years of age,
   // with a height of 177.8 cm and a weight of 78.909 kg..."
-
+cout << "Given the details" <<sex_string<< " of " <<age_years<< " years of age";
+cout << ", " <<height_cm<< " and a weight of " <<mass_kg<< "." ;
   // TODO: Summarize the outcome of the caluclation by printing the pronoun and
   // the BMR of the subject. For example, "She has a BMR of 1315.25 kcal per
   // day."
-
+cout << "" <<pronoun<< " has a BMR of " <<bmr<< "kcal per day.";
   return 0;
 }
